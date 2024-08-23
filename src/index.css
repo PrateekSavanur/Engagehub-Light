@@ -10,7 +10,7 @@
   --font-sora: "Sora", sans-serif;
   --font-code: "Source Code Pro", monospace;
   --font-grotesk: "Space Grotesk", sans-serif;
-  color-scheme:dark;
+  color-scheme: dark;
 }
 
 * {
@@ -85,4 +85,28 @@
 
 .-rotate-360 {
   @apply rotate-[-360deg];
+}
+
+.custom-scrollbar {
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border-radius: 10px;
+  margin-right: -10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #3b8dff, #6a11cb);
 }
