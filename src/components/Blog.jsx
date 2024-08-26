@@ -12,18 +12,17 @@ const Blog = () => (
         {blogs.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center p-4 rounded-lg w-full sm:w-[280px] md:w-[300px] lg:w-[350px] bg-n-6"
+            className="flex flex-col items-center p-4 rounded-lg w-full sm:w-[280px] md:w-[350px] lg:w-[50%] bg-n-6"
           >
             <div className="relative text-center">
               <Heading tag={item.title} title={item.title} />
+              <p>{item.text}</p>
             </div>
-            <div className="relative w-full mb-6 text-center overflow-hidden">
-              <p className="text-n-3 text-base md:text-lg leading-tight">
-                {item.text}
-              </p>
-            </div>
-            <div className="flex justify-center mt-12 md:mt-15 xl:mt-20">
-              <Button href="/roadmap">Read more</Button>
+
+            <div className="flex justify-center  mt-12">
+              <Button href="https://medium.com/@nikhil.core2/engagehub-revolutionizing-whatsapp-marketing-automation-692e03f5615c">
+                Read more
+              </Button>
             </div>
           </div>
         ))}

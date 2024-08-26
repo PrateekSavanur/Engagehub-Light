@@ -35,6 +35,10 @@ import photoshop from "./collaboration/photoshop.png";
 import protopie from "./collaboration/protopie.png";
 import raindrop from "./collaboration/raindrop.png";
 import slack from "./collaboration/slack.png";
+import google from "./collaboration/1.svg";
+import meta from "./collaboration/2.svg";
+import website from "./collaboration/website.png";
+import whatsApp from "./collaboration/4.svg";
 
 import service1 from "./services/service-1.png";
 import service2 from "./services/service-2.png";
@@ -74,6 +78,22 @@ import facebook from "./socials/facebook.svg";
 import instagram from "./socials/instagram.svg";
 import telegram from "./socials/telegram.svg";
 import twitter from "./socials/twitter.svg";
+import linkedIn from "./socials/LinkedIn.svg";
+
+import ICC from "./ICC.png";
+import BMC from "./BMC.png";
+import AMS from "./AMS.png";
+import SFM from "./SFM.png";
+import MTS from "./MTS.png";
+import CCM from "./CCM.png";
+import IPC from "./IPC.png";
+
+import logo1 from "./logos/1.png";
+import logo2 from "./logos/2.png";
+import logo3 from "./logos/3.png";
+import logo4 from "./logos/4.png";
+import logo5 from "./logos/5.png";
+import logo6 from "./logos/6.png";
 
 export {
   brainwave,
@@ -144,4 +164,22 @@ export {
   instagram,
   telegram,
   twitter,
+  linkedIn,
+  ICC,
+  BMC,
+  AMS,
+  SFM,
+  MTS,
+  CCM,
+  IPC,
+  logo1,
+  logo2,
+  logo3,
+  logo4,
+  logo5,
+  logo6,
+  whatsApp,
+  website,
+  meta,
+  google,
 };
