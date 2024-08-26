@@ -1,4 +1,5 @@
 import brainwave from "./brainwave.svg";
+import engagehub from "./engagehub.png";
 import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
@@ -97,6 +98,7 @@ import logo6 from "./logos/6.png";
 
 export {
   brainwave,
+  engagehub,
   check,
   check2,
   loading1,
