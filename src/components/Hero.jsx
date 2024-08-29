@@ -5,6 +5,7 @@ import { BottomLine } from "./design/Hero";
 import YouTube from "react-youtube";
 import { useRef, useEffect } from "react";
 import CompanyLogos from "./CompanyLogos";
+import ReactPlayer from "react-player";
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -77,34 +78,11 @@ const Hero = () => {
             Get Started
           </Button>
           <div className="w-full flex justify-center my-6 lg:mb-8">
-            <div
-              className="relative w-full"
-              style={{
-                maxWidth: "640px",
-                paddingBottom: "56.25%",
-                ...(window.innerWidth < 768 && {
-                  maxWidth: "100%",
-                  paddingBottom: "100%",
-                }),
-              }}
-            >
-              <YouTube
-                videoId="xJaPrnI7LAA"
-                opts={{
-                  height: "90%",
-                  width: "100%",
-                  playerVars: {
-                    autoplay: 1,
-                    controls: 0,
-                    loop: 1,
-                    rel: 0,
-                    modestbranding: 1,
-                  },
-                }}
-                onReady={onReady}
-                className="absolute top-0 left-0 w-full h-full"
-              />
-            </div>
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=bH4cwAtqRx4"
+              playing="true"
+              loop="true"
+            />
           </div>
         </div>
 

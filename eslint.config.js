@@ -35,6 +35,7 @@ export default [
       ],
       "react/prop-types": "off",
       "no-unused-vars": "warn",
+      "react/jsx-key": "off",
     },
   },
 ];

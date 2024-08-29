@@ -4,7 +4,7 @@ import Section from "./Section";
 import { blogs } from "../constants";
 
 const Blog = () => (
-  <Section className="overflow-hidden" id="roadmap">
+  <Section className="overflow-hidden" id="blogs">
     <div className="container md:pb-10">
       <Heading tag="Ready to get started" title="Our Blogs 👇" />
 

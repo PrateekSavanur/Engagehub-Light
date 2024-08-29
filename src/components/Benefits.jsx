@@ -38,8 +38,13 @@ const Benefits = () => {
               }}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]">
-                <h5 className="h5 mb-5">{item.tagline}</h5>
-                <p className="body-2 mb-6 text-n-3">{item.text1}</p>
+                <h5 className="h5 mb-5">{item.title}</h5>
+
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-auto h-48 object-cover rounded-md mx-auto mb-8"
+                />
                 <div
                   className="flex items-center mt-auto cursor-pointer"
                   onClick={() => openModal(item)}
@@ -93,14 +98,14 @@ const Benefits = () => {
             </button>
             <div className="overflow-y-auto max-h-[80vh] custom-scrollbar">
               <h2 className="text-2xl font-bold mb-4 text-center">
-                {selectedBenefit.title}
+                {selectedBenefit.tagline}
               </h2>
               <div className="flex flex-col items-start gap-4 text-justify">
-                <img
+                {/* <img
                   src={selectedBenefit.imageUrl}
                   alt={selectedBenefit.title}
                   className="w-auto h-54 object-cover rounded-md mx-auto"
-                />
+                /> */}
                 <ul className="list-disc list-inside space-y-2">
                   {selectedBenefit.text1 && <li>{selectedBenefit.text1}</li>}
                   {selectedBenefit.text2 && <li>{selectedBenefit.text2}</li>}

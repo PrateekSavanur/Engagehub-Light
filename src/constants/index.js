@@ -9,31 +9,20 @@ import {
   AMS,
   chromecast,
   disc02,
-  discord,
   facebook,
   linkedIn,
-  figma,
   file02,
-  framer,
   homeSmile,
   instagram,
   notification2,
   notification3,
   notification4,
-  notion,
-  photoshop,
   plusSquare,
-  protopie,
-  raindrop,
   recording01,
   recording03,
   roadmap1,
-  roadmap2,
   searchMd,
-  slack,
   sliders04,
-  telegram,
-  twitter,
   SFM,
   MTS,
   CCM,
@@ -63,14 +52,15 @@ export const navigation = [
   },
   {
     id: "2",
-    title: "How to use",
-    url: "#how-to-use",
+    title: "Solutions",
+    url: "#solutions",
   },
   {
     id: "3",
-    title: "Roadmap",
-    url: "#roadmap",
+    title: "Blogs",
+    url: "#blogs",
   },
+
   {
     id: "4",
     title: "New account",
@@ -82,6 +72,61 @@ export const navigation = [
     title: "Sign in",
     url: "#login",
     onlyMobile: true,
+  },
+];
+
+export const byIndustryFeatures = [
+  {
+    id: "0",
+    title: "B2B Sales",
+  },
+  {
+    id: "1",
+    title: "Travel and Tourism",
+  },
+  {
+    id: "2",
+    title: "Restaurants & Food Business",
+  },
+  {
+    id: "3",
+    title: "Spas and Salons",
+  },
+  {
+    id: "4",
+    title: "Health & Wellness Brands",
+  },
+  {
+    id: "5",
+    title: "Beauty & Cosmetic Brands",
+  },
+  {
+    id: "6",
+    title: "Edutech",
+  },
+  {
+    id: "7",
+    title: "Automotive Industry",
+  },
+  {
+    id: "8",
+    title: "Home Decor & Furnishing",
+  },
+  {
+    id: "9",
+    title: "Marketing Agency",
+  },
+  {
+    id: "10",
+    title: "Real Estate",
+  },
+  {
+    id: "11",
+    title: "Freelancer and Consultant Sales",
+  },
+  {
+    id: "12",
+    title: "Banking and Finance",
   },
 ];
 
@@ -108,16 +153,15 @@ export const brainwaveServicesIcons = [
 export const testimonial = [
   {
     id: "0",
-    title: "Testimonial 1",
-    text: "Enable the chatbot to understand and respond to voice commands, making it easier for users to interact with the app hands-free.",
-    imageUrl: roadmap1,
-    colorful: true,
+    title: "Maitreyi Rao",
+    text: "Thanks to engagehub's WhatsApp marketing services, my sales have increased tenfold! I highly recommend engagehub to anyone looking to boost their business with effective WhatsApp marketing strategies.",
+    topic: "WhatsApp Marketing",
   },
   {
     id: "1",
-    title: "Testmonial 2",
-    text: "Add game-like elements, such as badges or leaderboards, to incentivize users to engage with the chatbot more frequently.",
-    imageUrl: roadmap2,
+    title: "Virajas Kulkarni",
+    text: "I am so impressed with engagehub's innovative approach to WhatsApp marketing. Their services are unparalleled, and I am truly in love with their chatbot service. I highly recommend engagehub to anyone looking to boost their marketing strategies.",
+    topic: "Chatbot Services",
   },
 ];
 
@@ -152,28 +196,28 @@ export const collabContent = [
 export const collabApps = [
   {
     id: "0",
-    title: "Figma",
+    title: "Google",
     icon: google,
     width: 26,
     height: 36,
   },
   {
     id: "1",
-    title: "Notion",
+    title: "Meta",
     icon: meta,
     width: 34,
     height: 36,
   },
   {
     id: "2",
-    title: "Discord",
+    title: "Website",
     icon: website,
     width: 36,
     height: 28,
   },
   {
     id: "3",
-    title: "Slack",
+    title: "Whatsapp",
     icon: whatsApp,
     width: 34,
     height: 35,
@@ -183,36 +227,28 @@ export const collabApps = [
 export const pricing = [
   {
     id: "0",
-    title: "Quarterly",
-    description: "AI chatbot, personalized recommendations",
-    price: "0",
+    title: "Monthly - PRO",
+    description:
+      "Build simple Bots, Send bulk broadcast messages, Customer segmentation, and more. (billed yearly) + GST",
+    price: "699/month",
     features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
+      "Build simple Bots",
+      "Send bulk broadcast messages",
+      "Customer segmentation",
+      "Share products and catalogues",
+      "Detailed broadcast analytics",
+      "Excel export and import",
+      "Google sheets integration",
+      "Access on mobile and web",
     ],
   },
   {
     id: "1",
-    title: "Half Yearly",
-    description: "Advanced AI chatbot, priority support, analytics dashboard",
-    price: "9.99",
-    features: [
-      "An advanced AI chatbot that can understand complex queries",
-      "An analytics dashboard to track your conversations",
-      "Priority support to solve issues quickly",
-    ],
-  },
-  {
-    id: "2",
-    title: "Yearly",
-    description: "Custom AI chatbot, advanced analytics, dedicated account",
-    price: null,
-    features: [
-      "An AI chatbot that can understand your queries",
-      "Personalized recommendations based on your preferences",
-      "Ability to explore the app and its features without any cost",
-    ],
+    title: "Pro Plus",
+    description: "Advanced features and additional benefits",
+    description2: "(billed yearly)",
+    price: "999/year",
+    features: ["All the features of Pro"],
   },
 ];
 
