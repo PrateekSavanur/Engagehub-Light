@@ -32,17 +32,16 @@ const Benefits = () => {
           {benefits.map((item) => (
             <div
               key={item.id}
-              className="relative block p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              className="relative block p-0.5 md:max-w-[24rem]"
+              style={{
+                backgroundImage: `url(${item.imageUrl})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <div className="relative z-10 flex flex-col min-h-[22rem] p-[2.4rem]">
+              <div className="relative z-10 flex flex-col min-h-[22rem] p-[2.4rem] bg-black bg-opacity-60 rounded-md">
                 <h5 className="h5 mb-5 relative z-20">{item.title}</h5>
-                <div className="relative w-full h-48 mb-8">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover rounded-md opacity-80"
-                  />
-                </div>
+                {/* Removed the image element */}
                 <div
                   className="relative z-20 flex items-center mt-auto cursor-pointer"
                   onClick={() => openModal(item)}
@@ -60,22 +59,7 @@ const Benefits = () => {
                 </div>
               </div>
               {item.light && <GradientLight />}
-              <div
-                className="absolute inset-0.5 bg-n-8"
-                style={{ clipPath: "url(#benefits)" }}
-              >
-                <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                  {item.imageUrl && (
-                    <img
-                      src={item.imageUrl}
-                      width={380}
-                      height={362}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-              </div>
+              {/* Removed hover effect image */}
               <ClipPath />
             </div>
           ))}

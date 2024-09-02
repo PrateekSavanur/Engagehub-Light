@@ -4,39 +4,19 @@ import Button from "./Button";
 import Section from "./Section";
 import { BottomLine } from "./design/Hero";
 import CompanyLogos from "./CompanyLogos";
-import videojs from "video.js";
-import "video.js/dist/video-js.css";
-import "videojs-youtube";
+import ReactPlayer from "react-player";
 
 const Hero = () => {
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
 
+  const handlePlayVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.internalPlayer.playVideo();
+    }
+  };
+
   useEffect(() => {
-    const player = videojs(videoRef.current, {
-      techOrder: ["youtube"],
-      sources: [
-        {
-          src: "https://www.youtube.com/watch?v=bH4cwAtqRx4",
-          type: "video/youtube",
-        },
-      ],
-      controls: false,
-      autoplay: true,
-      loop: true,
-      preload: "auto",
-      fluid: true,
-      youtube: {
-        modestbranding: 1,
-        showinfo: 0,
-        rel: 0,
-      },
-    });
-
-    const handlePlayVideo = () => {
-      player.play();
-    };
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -44,9 +24,9 @@ const Hero = () => {
         }
       },
       {
-        root: null,
+        root: null, // Observe the entire viewport
         rootMargin: "0px",
-        threshold: 0.5,
+        threshold: 0.5, // Play video when 50% of the section is visible
       }
     );
 
@@ -57,9 +37,6 @@ const Hero = () => {
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
-      }
-      if (player) {
-        player.dispose();
       }
     };
   }, []);
@@ -91,20 +68,21 @@ const Hero = () => {
             <br />
             <br />
           </h1>
+          {/* <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
+            Unleash the power of AI within Brainwave. Upgrade your productivity
+            with Brainwave, the open AI chat app.
+          </p> */}
           <Button href="./pricing" white>
             Get Started
           </Button>
           <div className="w-full flex justify-center my-6 lg:mb-8">
-            <div data-vjs-player>
-              <video
-                ref={videoRef}
-                className="video-js vjs-default-skin"
-                controls
-                autoPlay
-                loop
-                playsInline
-              />
-            </div>
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=bH4cwAtqRx4&modestbranding=1&showinfo=0&rel=0"
+              playing={true}
+              loop={true}
+              controls={false} // Optional: hides controls
+              ref={videoRef}
+            />
           </div>
         </div>
 
