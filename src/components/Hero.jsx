@@ -1,27 +1,42 @@
+import { useRef, useEffect } from "react";
 import { curve } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BottomLine } from "./design/Hero";
-import YouTube from "react-youtube";
-import { useRef, useEffect } from "react";
 import CompanyLogos from "./CompanyLogos";
-import ReactPlayer from "react-player";
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
+import "videojs-youtube";
 
 const Hero = () => {
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
 
-  const handlePlayVideo = () => {
-    if (videoRef.current) {
-      videoRef.current.internalPlayer.playVideo();
-    }
-  };
-
-  const onReady = (event) => {
-    videoRef.current = event.target;
-  };
-
   useEffect(() => {
+    const player = videojs(videoRef.current, {
+      techOrder: ["youtube"],
+      sources: [
+        {
+          src: "https://www.youtube.com/watch?v=bH4cwAtqRx4",
+          type: "video/youtube",
+        },
+      ],
+      controls: false,
+      autoplay: true,
+      loop: true,
+      preload: "auto",
+      fluid: true,
+      youtube: {
+        modestbranding: 1,
+        showinfo: 0,
+        rel: 0,
+      },
+    });
+
+    const handlePlayVideo = () => {
+      player.play();
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,9 +44,9 @@ const Hero = () => {
         }
       },
       {
-        root: null, // Observe the entire viewport
+        root: null,
         rootMargin: "0px",
-        threshold: 0.5, // Play video when 50% of the section is visible
+        threshold: 0.5,
       }
     );
 
@@ -42,6 +57,9 @@ const Hero = () => {
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
+      }
+      if (player) {
+        player.dispose();
       }
     };
   }, []);
@@ -56,7 +74,7 @@ const Hero = () => {
     >
       <div className="container relative" ref={sectionRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
-          <h1 className="h1 mb-6">
+          <h1 className="h1 text-5xl mb-6">
             <span className="inline-block relative">
               ENGAGEHUB
               <img
@@ -67,22 +85,26 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>
-            &nbsp; : Your Gateway to Smart WhatsApp Marketing and Stellar
-            Reviews
+            <br />
+            <br />
+            Your Gateway to Smart WhatsApp Marketing and Stellar Reviews
+            <br />
+            <br />
           </h1>
-          {/* <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within Brainwave. Upgrade your productivity
-            with Brainwave, the open AI chat app.
-          </p> */}
           <Button href="./pricing" white>
             Get Started
           </Button>
           <div className="w-full flex justify-center my-6 lg:mb-8">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=bH4cwAtqRx4"
-              playing="true"
-              loop="true"
-            />
+            <div data-vjs-player>
+              <video
+                ref={videoRef}
+                className="video-js vjs-default-skin"
+                controls
+                autoPlay
+                loop
+                playsInline
+              />
+            </div>
           </div>
         </div>
 

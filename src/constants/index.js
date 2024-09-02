@@ -248,7 +248,16 @@ export const pricing = [
     description: "Advanced features and additional benefits",
     description2: "(billed yearly)",
     price: "999/year",
-    features: ["All the features of Pro"],
+    features: [
+      "Build simple Bots",
+      "Send bulk broadcast messages",
+      "Customer segmentation",
+      "Share products and catalogues",
+      "Detailed broadcast analytics",
+      "Excel export and import",
+      "Google sheets integration",
+      "Access on mobile and web",
+    ],
   },
 ];
 

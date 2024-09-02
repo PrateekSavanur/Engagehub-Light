@@ -33,20 +33,18 @@ const Benefits = () => {
             <div
               key={item.id}
               className="relative block p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
-              style={{
-                backgroundImage: `url(${item.backgroundUrl})`,
-              }}
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]">
-                <h5 className="h5 mb-5">{item.title}</h5>
-
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="w-auto h-48 object-cover rounded-md mx-auto mb-8"
-                />
+              <div className="relative z-10 flex flex-col min-h-[22rem] p-[2.4rem]">
+                <h5 className="h5 mb-5 relative z-20">{item.title}</h5>
+                <div className="relative w-full h-48 mb-8">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover rounded-md opacity-80"
+                  />
+                </div>
                 <div
-                  className="flex items-center mt-auto cursor-pointer"
+                  className="relative z-20 flex items-center mt-auto cursor-pointer"
                   onClick={() => openModal(item)}
                 >
                   <img
@@ -101,11 +99,6 @@ const Benefits = () => {
                 {selectedBenefit.tagline}
               </h2>
               <div className="flex flex-col items-start gap-4 text-justify">
-                {/* <img
-                  src={selectedBenefit.imageUrl}
-                  alt={selectedBenefit.title}
-                  className="w-auto h-54 object-cover rounded-md mx-auto"
-                /> */}
                 <ul className="list-disc list-inside space-y-2">
                   {selectedBenefit.text1 && <li>{selectedBenefit.text1}</li>}
                   {selectedBenefit.text2 && <li>{selectedBenefit.text2}</li>}
