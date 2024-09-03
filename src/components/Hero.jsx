@@ -66,15 +66,16 @@ const Hero = () => {
             <br />
             Your Gateway to Smart WhatsApp Marketing and Stellar Reviews
             <br />
-            <br />
           </h1>
           {/* <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
             Unleash the power of AI within Brainwave. Upgrade your productivity
             with Brainwave, the open AI chat app.
           </p> */}
-          <Button href="./pricing" white>
-            Get Started
-          </Button>
+          <div className="mb-5">
+            <Button href="./pricing" white>
+              Get Started
+            </Button>
+          </div>
           <div className="w-full flex justify-center pb-8 lg:mb-8">
             <ReactPlayer
               url="https://www.youtube.com/watch?v=bH4cwAtqRx4&modestbranding=1&showinfo=0&rel=0"

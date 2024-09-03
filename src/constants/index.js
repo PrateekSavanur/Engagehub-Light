@@ -3,7 +3,6 @@ import {
   benefitIcon2,
   benefitIcon3,
   benefitIcon4,
-  benefitImage2,
   ICC,
   BMC,
   AMS,
@@ -294,7 +293,6 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-2.svg",
     iconUrl: benefitIcon2,
     imageUrl: BMC,
-    light: true,
   },
   {
     id: "2",
@@ -324,7 +322,6 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
     imageUrl: CCM,
-    light: true,
   },
 
   {
@@ -354,7 +351,6 @@ export const benefits = [
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
     imageUrl: CSP,
-    light: true,
   },
   {
     id: "6",
