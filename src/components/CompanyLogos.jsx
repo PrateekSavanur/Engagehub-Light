@@ -12,7 +12,7 @@ const CompanyLogos = ({ className }) => {
           <ul className="flex justify-between">
             {companyLogos.map((logo, index) => (
               <li
-                className="flex items-center mx-12 h-[6rem] w-[6rem] rounded-lg shadow-md p-4 "
+                className="flex items-center mx-12 h-[6rem] w-[6rem] rounded-lg  p-4 "
                 key={index}
               >
                 <img
