@@ -27,6 +27,7 @@ import {
   MTS,
   CCM,
   IPC,
+  CSP,
   logo1,
   logo2,
   logo3,
@@ -37,6 +38,8 @@ import {
   meta,
   website,
   whatsApp,
+  maleAvatar,
+  femaleAvatar,
 } from "../assets";
 
 export const navigation = [
@@ -156,12 +159,14 @@ export const testimonial = [
     title: "Maitreyi Rao",
     text: "Thanks to engagehub's WhatsApp marketing services, my sales have increased tenfold! I highly recommend engagehub to anyone looking to boost their business with effective WhatsApp marketing strategies.",
     topic: "WhatsApp Marketing",
+    avatar: femaleAvatar,
   },
   {
     id: "1",
     title: "Virajas Kulkarni",
     text: "I am so impressed with engagehub's innovative approach to WhatsApp marketing. Their services are unparalleled, and I am truly in love with their chatbot service. I highly recommend engagehub to anyone looking to boost their marketing strategies.",
     topic: "Chatbot Services",
+    avatar: maleAvatar,
   },
 ];
 
@@ -348,7 +353,7 @@ export const benefits = [
       "Tailored messaging: Based on this analysis, you can send personalized messages to different customer segments.",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
-    imageUrl: benefitImage2,
+    imageUrl: CSP,
     light: true,
   },
   {

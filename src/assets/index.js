@@ -88,6 +88,7 @@ import SFM from "./SFM.png";
 import MTS from "./MTS.png";
 import CCM from "./CCM.png";
 import IPC from "./IPC.png";
+import CSP from "./CSP.jpg";
 
 import logo1 from "./logos/1.png";
 import logo2 from "./logos/2.png";
@@ -95,6 +96,9 @@ import logo3 from "./logos/3.png";
 import logo4 from "./logos/4.png";
 import logo5 from "./logos/5.png";
 import logo6 from "./logos/6.png";
+
+import maleAvatar from "./male.jpg";
+import femaleAvatar from "./female.jpg";
 
 export {
   brainwave,
@@ -174,6 +178,7 @@ export {
   MTS,
   CCM,
   IPC,
+  CSP,
   logo1,
   logo2,
   logo3,
@@ -184,4 +189,6 @@ export {
   website,
   meta,
   google,
+  maleAvatar,
+  femaleAvatar,
 };

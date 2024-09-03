@@ -24,9 +24,9 @@ const Hero = () => {
         }
       },
       {
-        root: null, // Observe the entire viewport
+        root: null,
         rootMargin: "0px",
-        threshold: 0.5, // Play video when 50% of the section is visible
+        threshold: 0.5,
       }
     );
 
@@ -75,13 +75,15 @@ const Hero = () => {
           <Button href="./pricing" white>
             Get Started
           </Button>
-          <div className="w-full flex justify-center my-6 lg:mb-8">
+          <div className="w-full flex justify-center pb-8 lg:mb-8">
             <ReactPlayer
               url="https://www.youtube.com/watch?v=bH4cwAtqRx4&modestbranding=1&showinfo=0&rel=0"
               playing={true}
               loop={true}
-              controls={false} // Optional: hides controls
+              controls={false}
               ref={videoRef}
+              width={580}
+              height={330}
             />
           </div>
         </div>

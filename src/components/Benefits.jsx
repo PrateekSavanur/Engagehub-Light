@@ -32,34 +32,30 @@ const Benefits = () => {
           {benefits.map((item) => (
             <div
               key={item.id}
-              className="relative block p-0.5 md:max-w-[24rem]"
+              className="relative block md:max-w-[24rem]"
               style={{
                 backgroundImage: `url(${item.imageUrl})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             >
-              <div className="relative z-10 flex flex-col min-h-[22rem] p-[2.4rem] bg-black bg-opacity-60 rounded-md">
-                <h5 className="h5 mb-5 relative z-20">{item.title}</h5>
-                {/* Removed the image element */}
+              <div className="relative z-10 flex flex-col min-h-[22rem] p-[2.6rem] bg-black bg-opacity-50 rounded-md">
+                <h5 className="h5 mb-5 relative z-20 text-white shadow-md">
+                  {item.title}
+                </h5>
+
                 <div
                   className="relative z-20 flex items-center mt-auto cursor-pointer"
                   onClick={() => openModal(item)}
                 >
-                  <img
-                    src={item.iconUrl}
-                    width={48}
-                    height={48}
-                    alt={item.title}
-                  />
-                  <p className="ml-auto font-code text-xx font-bold text-n-1 uppercase tracking-wider">
+                  <img src={item.iconUrl} alt={item.title} />
+                  <p className="ml-auto font-code text-xx font-bold text-white uppercase tracking-wider shadow-md">
                     Explore more
                   </p>
                   <Arrow />
                 </div>
               </div>
               {item.light && <GradientLight />}
-              {/* Removed hover effect image */}
               <ClipPath />
             </div>
           ))}
@@ -69,20 +65,20 @@ const Benefits = () => {
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
-            className="bg-black rounded-lg p-8 max-w-lg mx-auto my-10 relative overflow-hidden"
-            overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
+            className="rounded-lg p-8 max-w-lg mx-auto my-10 relative overflow-hidden bg-n-1 border border-n-7"
+            overlayClassName="fixed inset-0 bg-n-6 bg-opacity-50 z-50 flex items-center justify-center"
           >
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 p-2 rounded-lg hover:bg-red-500"
+              className="absolute top-4 right-4 p-2 rounded-lg text-n-8 hover:bg-orange-700"
             >
               ✕
             </button>
             <div className="overflow-y-auto max-h-[80vh] custom-scrollbar">
-              <h2 className="text-2xl font-bold mb-4 text-center">
+              <h2 className="text-2xl font-bold mb-4 text-center text-n-8">
                 {selectedBenefit.tagline}
               </h2>
-              <div className="flex flex-col items-start gap-4 text-justify">
+              <div className="flex flex-col items-start gap-4 text-justify text-n-8">
                 <ul className="list-disc list-inside space-y-2">
                   {selectedBenefit.text1 && <li>{selectedBenefit.text1}</li>}
                   {selectedBenefit.text2 && <li>{selectedBenefit.text2}</li>}

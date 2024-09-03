@@ -28,8 +28,8 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8-90 lg:backdrop-blur-sm ${
-        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-1-90 lg:backdrop-blur-sm ${
+        openNavigation ? "bg-n-1" : "bg-n-1/90 backdrop-blur-sm"
       }`}
     >
       <div className="flex items-center px-5 lg:px-7 xl:px-10 max-lg:py-4">
@@ -37,32 +37,32 @@ const Header = () => {
           className="flex items-center justify-between w-[12rem] xl:mr-8"
           href="#hero"
         >
-          <img src={engagehub} alt="brainwave" width={60} height={60} />
-          <p className="text-lg">ENGAGEHUB</p>
+          <img src={engagehub} alt="brainwave" width={80} height={80} />
+          <p className="text-lg text-n-8">ENGAGEHUB</p>
         </a>
 
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-1 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center mx-auto lg:flex-row">
             {navigation.map((item) =>
               item.title === "Solutions" ? (
-                <div className="mx-4">
+                <div className="mx-4" key={item.id}>
                   <div className="md:block hidden">
                     <Dropdown
                       key={item.id}
                       title={
-                        <span className="flex items-center text-[12px] font-code uppercase text-n-1 transition-colors hover:text-color-1">
+                        <span className="flex items-center text-[12px] font-code uppercase text-n-8 transition-colors hover:text-color-1">
                           {item.title}
                           <span className="ml-2">▼</span>
                         </span>
                       }
                       onOptionClick={handleClick}
-                      className="font-code text-2xl uppercase  transition-colors hover:text-color-1 bg-n-8"
+                      className="font-code text-2xl uppercase transition-colors hover:text-color-1 bg-n-1"
                     >
-                      <Dropdown.Item className="py-2 px-4 text-n-8 font-code text-1xl uppercase  transition-colors hover:text-color-1">
+                      <Dropdown.Item className="py-2 px-4 text-n-8 font-code text-1xl uppercase transition-colors hover:text-color-1">
                         BY INDUSTRY
                         <Dropdown.Submenu
                           position="right"
@@ -100,15 +100,15 @@ const Header = () => {
                     <Dropdown
                       key={item.id}
                       title={
-                        <span className="flex items-center text-1x1  font-code uppercase text-n-1 transition-colors hover:text-color-1">
+                        <span className="flex items-center text-1x1  font-code uppercase text-n-8 transition-colors hover:text-color-1">
                           {item.title}
                           <span className="ml-1">▼</span>
                         </span>
                       }
                       onOptionClick={handleClick}
-                      className="font-code text-2xl uppercase  transition-colors hover:text-color-1 bg-n-8"
+                      className="font-code text-2xl uppercase transition-colors hover:text-color-1 bg-n-1"
                     >
-                      <Dropdown.Item className="py-2 px-4 text-n-8 font-code text-1xl uppercase  transition-colors hover:text-color-1">
+                      <Dropdown.Item className="py-2 px-4 text-n-8 font-code text-1xl uppercase transition-colors hover:text-color-1">
                         BY INDUSTRY
                         <Dropdown.Submenu
                           position="bottom"
@@ -147,11 +147,11 @@ const Header = () => {
                 <a
                   key={item.id}
                   href={item.url}
-                  className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                  className={`block relative font-code text-2xl uppercase text-n-8 transition-colors hover:text-color-1 ${
                     item.onlyMobile ? "lg:hidden" : ""
                   } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                    item.url === pathname ? "z-2 lg:text-n-1" : "lg:text-n-1/50"
-                  } lg:leading-5 lg:hover:text-n-1`}
+                    item.url === pathname ? "z-2 lg:text-n-8" : "lg:text-n-8/50"
+                  } lg:leading-5 lg:hover:text-n-8`}
                   onClick={handleClick}
                 >
                   {item.title}
@@ -164,7 +164,7 @@ const Header = () => {
         </nav>
         <a
           href="#signup"
-          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+          className="button hidden mr-8 text-n-8/50 transition-colors hover:text-n-8 lg:block"
         >
           New account
         </a>
