@@ -88,7 +88,8 @@ import SFM from "./SFM.png";
 import MTS from "./MTS.png";
 import CCM from "./CCM.png";
 import IPC from "./IPC.png";
-import CSP from "./CSP.jpg";
+import CSP from "./CSP.png";
+import heroImage from "./hero.png";
 
 import logo1 from "./logos/1.png";
 import logo2 from "./logos/2.png";
@@ -179,6 +180,7 @@ export {
   CCM,
   IPC,
   CSP,
+  heroImage,
   logo1,
   logo2,
   logo3,

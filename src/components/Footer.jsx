@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Section
       crosses
-      className="!px-0 !py-10 flex max-md:flex-col max-md border border-n-7"
+      className="!px-0 !py-10 flex max-md:flex-col max-md border border-n-7 bg-gray-200"
     >
       <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
         <p className="caption text-n-4 lg:block">

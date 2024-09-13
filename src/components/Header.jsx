@@ -28,8 +28,8 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-1-90 lg:backdrop-blur-sm ${
-        openNavigation ? "bg-n-1" : "bg-n-1/90 backdrop-blur-sm"
+      className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-gray-200-90 lg:backdrop-blur-sm ${
+        openNavigation ? "bg-gray-200" : "bg-gray-200/90 backdrop-blur-sm"
       }`}
     >
       <div className="flex items-center px-5 lg:px-7 xl:px-10 max-lg:py-4">
@@ -44,7 +44,7 @@ const Header = () => {
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"
-          } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-1 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
+          } fixed top-[5rem] left-0 right-0 bottom-0 bg-gray-200 lg:static lg:flex lg:mx-auto lg:bg-transparent`}
         >
           <div className="relative z-2 flex flex-col items-center justify-center mx-auto lg:flex-row">
             {navigation.map((item) =>
@@ -54,13 +54,13 @@ const Header = () => {
                     <Dropdown
                       key={item.id}
                       title={
-                        <span className="flex items-center text-[12px] font-code uppercase text-n-8 transition-colors hover:text-color-1">
+                        <span className="flex items-center text-2xl lg:text-[12px] font-code uppercase text-n-8 transition-colors hover:text-color-1">
                           {item.title}
                           <span className="ml-2">▼</span>
                         </span>
                       }
                       onOptionClick={handleClick}
-                      className="font-code text-2xl uppercase transition-colors hover:text-color-1 bg-n-1"
+                      className="font-code text-2xl my-6 uppercase transition-colors hover:text-color-1 bg-gray-200"
                     >
                       <Dropdown.Item className="py-2 px-4 text-n-8 font-code text-1xl uppercase transition-colors hover:text-color-1">
                         BY INDUSTRY
@@ -100,13 +100,13 @@ const Header = () => {
                     <Dropdown
                       key={item.id}
                       title={
-                        <span className="flex items-center text-1x1  font-code uppercase text-n-8 transition-colors hover:text-color-1">
+                        <span className="flex items-center text-2xl  font-code uppercase text-n-8 transition-colors hover:text-color-1">
                           {item.title}
                           <span className="ml-1">▼</span>
                         </span>
                       }
                       onOptionClick={handleClick}
-                      className="font-code text-2xl uppercase transition-colors hover:text-color-1 bg-n-1"
+                      className="font-code text-2xl uppercase transition-colors hover:text-color-1 bg-gray-200"
                     >
                       <Dropdown.Item className="py-2 px-4 text-n-8 font-code text-1xl uppercase transition-colors hover:text-color-1">
                         BY INDUSTRY

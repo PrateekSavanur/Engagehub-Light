@@ -4,7 +4,7 @@ import { testimonial } from "../constants";
 import { Gradient } from "./design/Roadmap";
 
 const Feedback = () => (
-  <Section className="overflow-hidden " id="feedback">
+  <Section className="overflow-hidden bg-gray-200" id="feedback">
     <div className="container md:pb-10 ">
       <Heading tag="Here's What Our Users Say" title="Testimonials" />
 
@@ -12,7 +12,7 @@ const Feedback = () => (
         {testimonial.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center p-6 rounded-lg w-full sm:w-[280px] md:w-[300px] lg:w-[450px] bg-n-1 border border-n-8 shadow-lg"
+            className="flex flex-col items-center p-6 rounded-lg w-full sm:w-[280px] md:w-[300px] lg:w-[450px] bg-gray-200 border border-n-8 shadow-lg"
           >
             <img
               src={item.avatar}

@@ -1,5 +1,5 @@
-import { useRef, useEffect } from "react";
-import { curve } from "../assets";
+import { useRef, useState } from "react";
+import { curve, heroImage } from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BottomLine } from "./design/Hero";
@@ -9,90 +9,104 @@ import ReactPlayer from "react-player";
 const Hero = () => {
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
 
-  const handlePlayVideo = () => {
+  const handleMuteUnmute = () => {
     if (videoRef.current) {
-      videoRef.current.internalPlayer.playVideo();
+      const player = videoRef.current.getInternalPlayer();
+      setIsMuted(!isMuted);
+      if (isMuted) {
+        player.unMute();
+      } else {
+        player.mute();
+      }
     }
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          handlePlayVideo();
-        }
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <Section
-      className="pt-[12rem] -mt-[5.25rem]"
-      crosses
-      crossesOffset="lg:translate-y-[5.25rem]"
-      customPaddings
-      id="hero"
-    >
-      <div className="container relative" ref={sectionRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
-          <h1 className="h1 text-5xl mb-6">
-            <span className="inline-block relative">
-              ENGAGEHUB
-              <img
-                src={curve}
-                className="absolute top-full left-0 w-full xl:-mt-2"
-                width={624}
-                height={28}
-                alt="Curve"
-              />
-            </span>
-            <br />
-            <br />
-            Your Gateway to Smart WhatsApp Marketing and Stellar Reviews
-            <br />
-          </h1>
-          {/* <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the power of AI within Brainwave. Upgrade your productivity
-            with Brainwave, the open AI chat app.
-          </p> */}
-          <div className="mb-5">
-            <Button href="./pricing" white>
-              Get Started
-            </Button>
-          </div>
-          <div className="w-full flex justify-center pb-8 lg:mb-8">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=bH4cwAtqRx4&modestbranding=1&showinfo=0&rel=0"
-              playing={true}
-              loop={true}
-              controls={false}
-              ref={videoRef}
-              width={580}
-              height={330}
-            />
+    <>
+      <Section
+        className="pt-[12rem] -mt-[5.25rem] bg-gray-200 text-n-8"
+        crosses
+        crossesOffset="lg:translate-y-[5.25rem]"
+        customPaddings
+        id="hero"
+      >
+        <div className="container mx-auto" ref={sectionRef}>
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <h1 className="h1 text-5xl mb-6 font-bold">
+                <span className="inline-block relative">
+                  ENGAGEHUB
+                  <img
+                    src={curve}
+                    className="absolute top-full left-0 w-full xl:-mt-2"
+                    width={624}
+                    height={28}
+                    alt="Curve"
+                  />
+                </span>
+                <br />
+                <br />
+                Your Gateway to Smart WhatsApp Marketing and Stellar Reviews
+              </h1>
+              <p className="body-1 max-w-lg mx-auto lg:mx-0 mb-6 text-n-8">
+                Unleash the power of AI within Brainwave. Upgrade your
+                productivity with Brainwave, the open AI chat app.
+              </p>
+              <div className="mb-5">
+                <Button href="./pricing" white>
+                  Get Started
+                </Button>
+              </div>
+            </div>
+
+            <div className="lg:w-1/2 flex justify-center lg:justify-end">
+              <div className="relative">
+                <img
+                  src={heroImage}
+                  alt="Hero"
+                  className="w-[500px] h-auto lg:w-[600px] object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        <CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
-      </div>
-      <BottomLine />
-    </Section>
+        <Section className="bg-gray-200 text-n-8">
+          <div className="container mx-auto mt-8 flex justify-center">
+            <div className="relative w-[680px] h-[380px] lg:w-[800px] lg:h-[450px] shadow-xl rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl border-4 border-gray-300 bg-white">
+              <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-transparent to-black opacity-30"></div>
+              <div className="absolute inset-0 z-20 flex items-center justify-center p-4">
+                <div className="absolute inset-0 border-4 border-white rounded-xl opacity-80"></div>
+                <ReactPlayer
+                  url="https://www.youtube.com/watch?v=bH4cwAtqRx4&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&controls=0&fs=0&disablekb=1"
+                  playing={true}
+                  loop={true}
+                  muted={isMuted}
+                  controls={false}
+                  ref={videoRef}
+                  width="100%"
+                  height="100%"
+                />
+                <div className="absolute bottom-4 left-4 flex space-x-4 z-30">
+                  <button
+                    className="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-md hover:bg-gray-200 transition"
+                    onClick={handleMuteUnmute}
+                  >
+                    {isMuted ? "Unmute" : "Mute"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        <CompanyLogos className="hidden lg:block mt-10" />
+
+        <BottomLine />
+      </Section>
+    </>
   );
 };
 

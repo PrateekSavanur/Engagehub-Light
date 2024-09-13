@@ -4,7 +4,7 @@ import Section from "./Section";
 import { blogs } from "../constants";
 
 const Blog = () => (
-  <Section className="overflow-hidden" id="blogs">
+  <Section className="overflow-hidden bg-gray-200" id="blogs">
     <div className="container md:pb-10">
       <Heading tag="Ready to get started" title="Our Blogs 👇" />
 
@@ -12,7 +12,7 @@ const Blog = () => (
         {blogs.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center p-4 rounded-lg w-full sm:w-[280px] md:w-[350px] lg:w-[50%] bg-n-1 border border-n-7"
+            className="flex flex-col items-center p-4 rounded-lg w-full sm:w-[280px] md:w-[350px] lg:w-[50%] bg-gray-200 border border-n-7"
           >
             <div className="relative text-center">
               <Heading

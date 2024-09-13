@@ -59,18 +59,23 @@ export const navigation = [
   },
   {
     id: "3",
+    title: "Testimonials",
+    url: "#feedback",
+  },
+  {
+    id: "4",
     title: "Blogs",
     url: "#blogs",
   },
 
   {
-    id: "4",
+    id: "5",
     title: "New account",
     url: "#signup",
     onlyMobile: true,
   },
   {
-    id: "5",
+    id: "6",
     title: "Sign in",
     url: "#login",
     onlyMobile: true,
@@ -176,6 +181,7 @@ export const blogs = [
     text: "The blog introduces Engagehub, a WhatsApp marketing automation tool that enhances customer engagement with features like bulk messaging, chatbots, and integrated product catalogs. It emphasizes how these tools streamline communication and drive business growth.",
     imageUrl: roadmap1,
     colorful: true,
+    link: "https://medium.com/@nikhil.core2/engagehub-revolutionizing-whatsapp-marketing-automation-692e03f5615c",
   },
 ];
 
@@ -321,7 +327,7 @@ export const benefits = [
       "Audience targeting: You can select specific groups of customers to receive particular messages, ensuring relevance and personalization.",
     backgroundUrl: "./src/assets/benefits/card-4.svg",
     iconUrl: benefitIcon4,
-    imageUrl: CCM,
+    imageUrl: MTS,
   },
 
   {
@@ -364,7 +370,7 @@ export const benefits = [
       "Interaction tracking: You can easily view and manage all customer conversations, ensuring no message goes unanswered.",
     backgroundUrl: "./src/assets/benefits/card-5.svg",
     iconUrl: benefitIcon1,
-    imageUrl: MTS,
+    imageUrl: CCM,
   },
   {
     id: "7",

@@ -8,7 +8,7 @@ const PricingList = () => {
       {pricing.map((item) => (
         <div
           key={item.id}
-          className="w-[20rem] max-lg:w-full px-6 bg-n-1 border border-n-7 rounded-[2rem] lg:w-[40rem] even:py-14 odd:py-8 odd:my-4"
+          className="w-[20rem] max-lg:w-full px-6 bg-gray-200 border border-n-7 rounded-[2rem] lg:w-[40rem] even:py-14 odd:py-8 odd:my-4"
         >
           <h4 className="h4 mb-4 text-n-8">{item.title}</h4>
           <p className="body-2 min-h-[4rem] mb-3 text-n-8/50">

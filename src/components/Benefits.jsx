@@ -22,7 +22,7 @@ const Benefits = () => {
   };
 
   return (
-    <Section id="features">
+    <Section id="features" className="bg-gray-200">
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
@@ -65,7 +65,7 @@ const Benefits = () => {
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
-            className="rounded-lg p-8 max-w-lg mx-auto my-10 relative overflow-hidden bg-n-1 border border-n-7"
+            className="rounded-lg p-8 max-w-lg mx-auto my-10 relative overflow-hidden bg-gray-200 border border-n-7"
             overlayClassName="fixed inset-0 bg-n-6 bg-opacity-50 z-50 flex items-center justify-center"
           >
             <button
