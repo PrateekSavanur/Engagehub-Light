@@ -2,7 +2,6 @@ import Section from "./Section";
 import Heading from "./Heading";
 import { benefits } from "../constants";
 import Arrow from "../assets/svg/Arrow";
-import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { useState } from "react";
 import Modal from "react-modal";
@@ -24,38 +23,42 @@ const Benefits = () => {
   return (
     <Section id="features" className="bg-gray-200">
       <div className="container relative z-2">
-        <Heading
-          className="md:max-w-md lg:max-w-2xl"
-          title="Engage Hub Features"
-        />
-        <div className="flex flex-wrap justify-center gap-10 mb-10">
+        <div className="text-center mb-10">
+          <Heading
+            className="md:max-w-md lg:max-w-2xl mx-auto"
+            title="Engage Hub Features"
+          />
+        </div>
+        <div className="flex flex-wrap justify-center gap-10 mb-10 ">
           {benefits.map((item) => (
             <div
               key={item.id}
-              className="relative block md:max-w-[24rem]"
-              style={{
-                backgroundImage: `url(${item.imageUrl})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className="relative block md:max-w-[24rem] rounded-md bg-slate-700 bg-opacity-40"
             >
-              <div className="relative z-10 flex flex-col min-h-[22rem] p-[2.6rem] bg-black bg-opacity-50 rounded-md">
-                <h5 className="h5 mb-5 relative z-20 text-white shadow-md">
+              <div
+                className="absolute inset-0  rounded-md"
+                style={{
+                  backgroundImage: `url(${item.imageUrl})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  zIndex: 1,
+                }}
+              />
+              <div className="relative bg-gradient-to-t flex flex-col min-h-[22rem] p-[0.6rem] rounded-md z-10">
+                <h5 className="h5 text-white shadow-md bg-slate-700 bg-opacity-85 px-4 py-2 rounded-md">
                   {item.title}
                 </h5>
-
                 <div
-                  className="relative z-20 flex items-center mt-auto cursor-pointer"
+                  className="relative flex items-center mt-auto cursor-pointer bg-slate-700 bg-opacity-20 px-4 py-2"
                   onClick={() => openModal(item)}
                 >
                   <img src={item.iconUrl} alt={item.title} />
-                  <p className="ml-auto font-code text-xx font-bold text-white uppercase tracking-wider shadow-md">
+                  <p className="ml-auto font-code text-xx font-bold text-white uppercase tracking-wider shadow-lg">
                     Explore more
                   </p>
                   <Arrow />
                 </div>
               </div>
-
               <ClipPath />
             </div>
           ))}
