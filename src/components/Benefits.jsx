@@ -33,7 +33,7 @@ const Benefits = () => {
           {benefits.map((item) => (
             <div
               key={item.id}
-              className="relative block md:max-w-[24rem] rounded-md bg-slate-700 bg-opacity-40"
+              className="relative block md:max-w-[24rem] bg-slate-700 bg-opacity-40 rounded-lg"
             >
               <div
                 className="absolute inset-0  rounded-md"
@@ -45,15 +45,15 @@ const Benefits = () => {
                 }}
               />
               <div className="relative bg-gradient-to-t flex flex-col min-h-[22rem] p-[0.6rem] rounded-md z-10">
-                <h5 className="h5 text-white shadow-md bg-slate-700 bg-opacity-85 px-4 py-2 rounded-md">
+                <h5 className="h5 text-black font-bold shadow-md backdrop-blur-md px-4 py-2 rounded-md">
                   {item.title}
                 </h5>
                 <div
-                  className="relative flex items-center mt-auto cursor-pointer bg-slate-700 bg-opacity-20 px-4 py-2"
+                  className="relative flex items-center mt-auto cursor-pointer backdrop-blur-sm px-4 py-2"
                   onClick={() => openModal(item)}
                 >
                   <img src={item.iconUrl} alt={item.title} />
-                  <p className="ml-auto font-code text-xx font-bold text-white uppercase tracking-wider shadow-lg">
+                  <p className="ml-auto font-code text-xx font-bold text-black uppercase shadow-lg">
                     Explore more
                   </p>
                   <Arrow />
