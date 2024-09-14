@@ -8,7 +8,7 @@ const Blog = () => (
   <Section className="overflow-hidden bg-gray-200 py-16" id="blogs">
     <div className="container mx-auto px-6 md:px-12">
       <Heading
-        tag="h2"
+        tag="Dive into Insights: Discover, Learn, and Grow with Our Latest Articles"
         title="Our Blogs 👇"
         className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-900"
       />

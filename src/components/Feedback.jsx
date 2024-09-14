@@ -7,7 +7,7 @@ const Feedback = () => (
   <Section className="overflow-hidden bg-gray-200 py-16" id="feedback">
     <div className="container mx-auto px-6 md:px-12">
       <Heading
-        tag="h2"
+        tag="Hear Directly from Our Users: Real Experiences, Real Impact"
         title="Here's What Our Users Say"
         className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-900"
       />
